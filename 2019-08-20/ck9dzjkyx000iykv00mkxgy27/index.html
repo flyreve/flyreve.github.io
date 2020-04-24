@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Vue中监听窗口变化，实现页面响应式 | Flyreve&#39;s Blog | F的储物间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Vue,JavaScript">
+    <meta name="description" content="利用onresize 事件会在窗口或框架被调整大小时发生的机制，获取动态的窗口宽高  网页可见区域宽：document.body.clientWidth网页可见区域高：document.body.clientHeight网页可见区域宽：document.body.offsetWidth (包括边线的宽)网页可见区域高：document.body.offsetHeight (包括边线的宽) 123">
+<meta name="keywords" content="Vue,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue中监听窗口变化，实现页面响应式">
+<meta property="og:url" content="https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/index.html">
+<meta property="og:site_name" content="Flyreve&#39;s Blog">
+<meta property="og:description" content="利用onresize 事件会在窗口或框架被调整大小时发生的机制，获取动态的窗口宽高  网页可见区域宽：document.body.clientWidth网页可见区域高：document.body.clientHeight网页可见区域宽：document.body.offsetWidth (包括边线的宽)网页可见区域高：document.body.offsetHeight (包括边线的宽) 123">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-24T09:14:22.535Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue中监听窗口变化，实现页面响应式">
+<meta name="twitter:description" content="利用onresize 事件会在窗口或框架被调整大小时发生的机制，获取动态的窗口宽高  网页可见区域宽：document.body.clientWidth网页可见区域高：document.body.clientHeight网页可见区域宽：document.body.offsetWidth (包括边线的宽)网页可见区域高：document.body.offsetHeight (包括边线的宽) 123">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">flyreve</h5>
+          <a href="mailto:1361901282@qq.com" title="1361901282@qq.com" class="mail">1361901282@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/flyreve" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vue中监听窗口变化，实现页面响应式</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vue中监听窗口变化，实现页面响应式</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-20T08:12:00.000Z" itemprop="datePublished" class="page-time">
+  2019-08-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端/">前端</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-Vue中监听窗口变化，实现页面响应式" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vue中监听窗口变化，实现页面响应式</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-20 16:12:00" datetime="2019-08-20T08:12:00.000Z" itemprop="datePublished">2019-08-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端/">前端</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>利用<code>onresize</code> 事件会在窗口或框架被调整大小时发生的机制，获取动态的窗口宽高</p>
+</blockquote>
+<p>网页可见区域宽：<code>document.body.clientWidth</code><br>网页可见区域高：<code>document.body.clientHeight</code><br>网页可见区域宽：<code>document.body.offsetWidth</code> (包括边线的宽)<br>网页可见区域高：<code>document.body.offsetHeight</code> (包括边线的宽)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">    screenWidth: <span class="built_in">document</span>.body.clientWidth</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在页面mounted时，挂载window.onresize方法</span></span><br><span class="line">mounted () &#123;</span><br><span class="line">    <span class="keyword">const</span> that = <span class="keyword">this</span></span><br><span class="line">    <span class="built_in">window</span>.onresize = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function">(<span class="params">(</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">window</span>.screenWidth = <span class="built_in">document</span>.body.clientWidth</span><br><span class="line">            that.screenWidth = <span class="built_in">window</span>.screenWidth</span><br><span class="line">        &#125;)()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听screenWidth属性值的变化，打印并观察screenWidth发生变化的值：</span></span><br><span class="line">watch:&#123;</span><br><span class="line">    screenWidth(val)&#123;</span><br><span class="line">        <span class="comment">// 为了避免频繁触发resize函数导致页面卡顿，使用定时器</span></span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">this</span>.timer)&#123;</span><br><span class="line">            <span class="comment">// 一旦监听到的screenWidth值改变，就将其重新赋给data里的screenWidth</span></span><br><span class="line">            <span class="keyword">this</span>.screenWidth = val</span><br><span class="line">            <span class="keyword">this</span>.timer = <span class="literal">true</span></span><br><span class="line">            <span class="keyword">let</span> that = <span class="keyword">this</span></span><br><span class="line">            setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="comment">// 打印screenWidth变化的值</span></span><br><span class="line">                <span class="built_in">console</span>.log(that.screenWidth)</span><br><span class="line">                that.timer = <span class="literal">false</span></span><br><span class="line">            &#125;,<span class="number">400</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>mounted () {
+    const that = this
+    window.onresize = () =&gt; {
+        return (() =&gt; {
+            window.screenWidth = document.body.clientWidth
+            that.screenWidth = window.screenWidth
+        })()
+    }
+}
+</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-24T09:14:22.535Z" itemprop="dateUpdated">2020-04-24 17:14:22</time>
+</span><br>
+
+
+        
+        <a href="/2019-08-20/ck9dzjkyx000iykv00mkxgy27/" target="_blank" rel="external">https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://flyreve.github.io">
+            <img src="/img/avatar.jpg" alt="flyreve">
+            flyreve
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/&title=《Vue中监听窗口变化，实现页面响应式》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/&title=《Vue中监听窗口变化，实现页面响应式》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue中监听窗口变化，实现页面响应式》 — Flyreve's Blog&url=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019-08-30/ck9dzjkyu000bykv08j05ye6a/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hexo Bug整理</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019-08-17/ck9dzjkyj0001ykv0dap29mcz/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CSS 实现元素水平/垂直居中</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>flyreve &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/&title=《Vue中监听窗口变化，实现页面响应式》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/&title=《Vue中监听窗口变化，实现页面响应式》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue中监听窗口变化，实现页面响应式》 — Flyreve's Blog&url=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-08-20/ck9dzjkyx000iykv00mkxgy27/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqklEQVR42u3awW7jMAwE0P7/T3evPTTxDCkFxeL5VKSJreeDSAz19RVf3z+ur8X18w6v/n71xP3T8fDw8E7xvt9es++8+lXyzeTlJuvBw8PDu83LN/G8eDw8+O2zkk/e3wcPDw/v7/DaEpJ3uck38fDw8P4P3qaBzhtlPDw8vL/Gm90uKQazV5C33ceyFjw8PLyYd2pw9cm/r8z38PDw8NZT9Xa7nw2r2na5uBseHh7eBd5suDXDnC1OxeEwPDw8vAu8tpnOi8RsQ29LzuxF4OHh4c14SfPaHsOaNeKbUvGQT+Ph4eEd5bXt6eaTpOVtg4wVEg8PD2/By91tuzxr0E+VKDw8PLxP8vIBWH58qs1IZpHxL/fHw8PDO8rbL27WTJ9iPAQreHh4eNd4mzigjWVnYcRszXh4eHg3eJvDVW1wkB8OaOOGYp14eHh4a96sDLSlYnMKbBVq4OHh4V3g5W3r5r/t2KwdoUVtNB4eHt5lXh7LtsHuLIBIMA+HrvDw8PAO8dpBVzuaymGbVvshjMDDw8O7wGvHWvtmd9Y01y8aDw8P7wJvs1nni56NuJKDCPX38fDw8C7w2nAhH4DlxxE2nyfxBx4eHt49XhvUtqOs9ojAqeAYDw8P7zZvFtHmzfomCqnDCDw8PLxDvHzAn5eQtoFOPmlfBB4eHt5t3iyYOLv1t+UhWhseHh7eNV6yyX6XV7u5z66H0oKHh4d3lDdbbjsSmzXoeeF5+V88PDy8C7xZCLuJM2aLbpv7YW3Bw8PDi3mbYrDZvvMgY/VcPDw8vGu8PMDdH4SaDcbyoBkPDw/vb/La7T5/VjuWG8738PDw8D7O2yQcycGC2fGCX1aFh4eHd42XPKAdL7W/apFRlIyHh4d3gTfbytvisW+4r8/38PDw8J5/9Q+JN7tgcEsNEwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

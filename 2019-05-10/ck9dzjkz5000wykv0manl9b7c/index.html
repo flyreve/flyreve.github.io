@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>vue课程笔记 | Flyreve&#39;s Blog | F的储物间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Vue">
+    <meta name="description" content="第二章 Vue起步2-1 课程学习方法2-2 使用Vue.js实现Hello World2-3 使用Vue.js实现TodoList2-4 MVVM模式 MVP模式和MVVM模式  2-5 前端组件化2-6 使用组件化思想修改TodoList 全局组件（无需注册直接使用）  123Vue.component(&amp;quot;TodoItem&amp;quot;, &amp;#123;  template: &amp;quot">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue课程笔记">
+<meta property="og:url" content="https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/index.html">
+<meta property="og:site_name" content="Flyreve&#39;s Blog">
+<meta property="og:description" content="第二章 Vue起步2-1 课程学习方法2-2 使用Vue.js实现Hello World2-3 使用Vue.js实现TodoList2-4 MVVM模式 MVP模式和MVVM模式  2-5 前端组件化2-6 使用组件化思想修改TodoList 全局组件（无需注册直接使用）  123Vue.component(&amp;quot;TodoItem&amp;quot;, &amp;#123;  template: &amp;quot">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-24T09:14:22.536Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue课程笔记">
+<meta name="twitter:description" content="第二章 Vue起步2-1 课程学习方法2-2 使用Vue.js实现Hello World2-3 使用Vue.js实现TodoList2-4 MVVM模式 MVP模式和MVVM模式  2-5 前端组件化2-6 使用组件化思想修改TodoList 全局组件（无需注册直接使用）  123Vue.component(&amp;quot;TodoItem&amp;quot;, &amp;#123;  template: &amp;quot">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">flyreve</h5>
+          <a href="mailto:1361901282@qq.com" title="1361901282@qq.com" class="mail">1361901282@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/flyreve" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue课程笔记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue课程笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-10T06:14:41.000Z" itemprop="datePublished" class="page-time">
+  2019-05-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章-Vue起步"><span class="post-toc-text">第二章 Vue起步</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-课程学习方法"><span class="post-toc-text">2-1 课程学习方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-使用Vue-js实现Hello-World"><span class="post-toc-text">2-2 使用Vue.js实现Hello World</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-使用Vue-js实现TodoList"><span class="post-toc-text">2-3 使用Vue.js实现TodoList</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-MVVM模式"><span class="post-toc-text">2-4 MVVM模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-5-前端组件化"><span class="post-toc-text">2-5 前端组件化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-6-使用组件化思想修改TodoList"><span class="post-toc-text">2-6 使用组件化思想修改TodoList</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-7-简单的组件间传值"><span class="post-toc-text">2-7 简单的组件间传值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-8-章小节"><span class="post-toc-text">2-8 章小节</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue_Lesson Note" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue课程笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-10 14:14:41" datetime="2019-05-10T06:14:41.000Z" itemprop="datePublished">2019-05-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="第二章-Vue起步"><a href="#第二章-Vue起步" class="headerlink" title="第二章 Vue起步"></a>第二章 Vue起步</h1><h3 id="2-1-课程学习方法"><a href="#2-1-课程学习方法" class="headerlink" title="2-1 课程学习方法"></a>2-1 课程学习方法</h3><h3 id="2-2-使用Vue-js实现Hello-World"><a href="#2-2-使用Vue-js实现Hello-World" class="headerlink" title="2-2 使用Vue.js实现Hello World"></a>2-2 使用Vue.js实现Hello World</h3><h3 id="2-3-使用Vue-js实现TodoList"><a href="#2-3-使用Vue-js实现TodoList" class="headerlink" title="2-3 使用Vue.js实现TodoList"></a>2-3 使用Vue.js实现TodoList</h3><h3 id="2-4-MVVM模式"><a href="#2-4-MVVM模式" class="headerlink" title="2-4 MVVM模式"></a>2-4 MVVM模式</h3><ul>
+<li><em>MVP模式和MVVM模式</em></li>
+</ul>
+<h3 id="2-5-前端组件化"><a href="#2-5-前端组件化" class="headerlink" title="2-5 前端组件化"></a>2-5 前端组件化</h3><h3 id="2-6-使用组件化思想修改TodoList"><a href="#2-6-使用组件化思想修改TodoList" class="headerlink" title="2-6 使用组件化思想修改TodoList"></a>2-6 使用组件化思想修改TodoList</h3><ul>
+<li><em>全局组件（无需注册直接使用）</em></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&quot;TodoItem&quot;, &#123;</span><br><span class="line">  template: &quot;&lt;li&gt;&lt;/li&gt;&quot;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><em>局部组件（需要在Vue实例中注册使用）</em></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var TodoItem = &#123;</span><br><span class="line">  template: &quot;&lt;li&gt;&lt;/li&gt;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-7-简单的组件间传值"><a href="#2-7-简单的组件间传值" class="headerlink" title="2-7 简单的组件间传值"></a>2-7 简单的组件间传值</h3><h3 id="2-8-章小节"><a href="#2-8-章小节" class="headerlink" title="2-8 章小节"></a>2-8 章小节</h3><hr>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-24T09:14:22.536Z" itemprop="dateUpdated">2020-04-24 17:14:22</time>
+</span><br>
+
+
+        
+        <a href="/2019-05-10/ck9dzjkz5000wykv0manl9b7c/" target="_blank" rel="external">https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://flyreve.github.io">
+            <img src="/img/avatar.jpg" alt="flyreve">
+            flyreve
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/&title=《vue课程笔记》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/&title=《vue课程笔记》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue课程笔记》 — Flyreve's Blog&url=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019-07-04/ck9dzjkz80013ykv0ikyi39t4/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">生命周期</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019-05-09/ck9dzjkz70010ykv0m0i6hz1d/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">样式重置</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>flyreve &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/&title=《vue课程笔记》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/&title=《vue课程笔记》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue课程笔记》 — Flyreve's Blog&url=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-05-10/ck9dzjkz5000wykv0manl9b7c/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aMXIjMQwEQP//074qpy6tZgDyrKAZuVYWxVZAQAC+vuL1/bNePfn9avv8927PTw4vPDw8vNHRX63n/8n3eT5i+95ifzw8PLxrvOfr+5n0fNw85CSYOhTh4eHh/SkvAST/2b53lcTj4eHhfQAvT46fr/s2/ODh4eF9Gi/58X87ALSB4XCtBQ8PD6+roxYNsE/4+2J/Dw8PD2/RVW+LqnmjaxYe6tPi4eHhXeAlbae83DAbMsjv8zwKvNkODw8Pb8HLL+J2sGBW9n1m1IUSPDw8vGu8/BCblHqTiM8CEh4eHt4NXvtTv/3gWZNs1kJ7+SoeHh7eUd6+3HC2nXZgxCqfJsPDw8Mb8U41pfLLuh3kyssWL3fGw8PDu8xLnkQlgLiQkd/h7ZwVHh4e3g1ewtg3yU6NcNVfCh4eHt4FXluEnQWJfUl3k+jj4eHhneW1raZTqfapIa03J8HDw8O7wNsPPyUH3QNWxQ48PDy8o7w2ec3xszZ/u/+bz8LDw8O7wJtd95u0eFbGzb/Kl+/Cw8PDu8A7W9LdDwTkl34RuvDw8PDWvDb9zUcBklCRhJ9ZqMDDw8O7x8vHrfJX8+u+bZi1IQQPDw/vHi8vPWwGCJ4Zydc3HMbCw8PDu8ybJc3t8NYmwNSBCg8PD+8or2135QluUp7Iyw15owsPDw/vf/JmRdtZWSHfYXMSPDw8vBu8fOWHnjXVisGpxdgBHh4e3p73Xa5Zy39WDs5DTlGMwMPDw1vzTkWStsjbhqJ27AAPDw/vNm/Tqj81wrUfzCp+DeDh4eEd4uXXff6kTYXbZlsSTvDw8PD+lpcXcNs22IwXBRs8PDy8D+DlR8nT6P14wZv5CDw8PLwLvFnTa1OwaHfOPwUPDw/vNm9WC50lzfnR84T+a7/w8PDwUt4/U0u7YJx3pCgAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
