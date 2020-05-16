@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>CSS 实现元素水平/垂直居中 | Flyreve&#39;s Blog | F的储物间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content>
+    <meta name="description" content="水平居中 摘自https://www.w3cplus.com/css/elements-horizontally-center-with-css.html  1. margin: 0 auto1234.class &amp;#123;  width: 100px;  margin: 0 auto&amp;#125;  优点：实现方法简单易懂，浏览器兼容性强； 缺点：扩展性差，无法自适应未知项情况  2. text">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 实现元素水平&#x2F;垂直居中">
+<meta property="og:url" content="https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/index.html">
+<meta property="og:site_name" content="Flyreve&#39;s Blog">
+<meta property="og:description" content="水平居中 摘自https://www.w3cplus.com/css/elements-horizontally-center-with-css.html  1. margin: 0 auto1234.class &amp;#123;  width: 100px;  margin: 0 auto&amp;#125;  优点：实现方法简单易懂，浏览器兼容性强； 缺点：扩展性差，无法自适应未知项情况  2. text">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-13.png">
+<meta property="og:updated_time" content="2020-04-24T09:14:22.534Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS 实现元素水平&#x2F;垂直居中">
+<meta name="twitter:description" content="水平居中 摘自https://www.w3cplus.com/css/elements-horizontally-center-with-css.html  1. margin: 0 auto1234.class &amp;#123;  width: 100px;  margin: 0 auto&amp;#125;  优点：实现方法简单易懂，浏览器兼容性强； 缺点：扩展性差，无法自适应未知项情况  2. text">
+<meta name="twitter:image" content="https://flyreve.github.io/images/pasted-13.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">flyreve</h5>
+          <a href="mailto:1361901282@qq.com" title="1361901282@qq.com" class="mail">1361901282@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/flyreve" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CSS 实现元素水平/垂直居中</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CSS 实现元素水平/垂直居中</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-17T05:16:58.000Z" itemprop="datePublished" class="page-time">
+  2019-08-17
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#水平居中"><span class="post-toc-text">水平居中</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-margin-0-auto"><span class="post-toc-text">1. margin: 0 auto</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-text-align-center"><span class="post-toc-text">2. text-align: center</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-float-amp-position"><span class="post-toc-text">3. float&amp;position</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-positon-absolute"><span class="post-toc-text">4. positon: absolute</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-display-flex"><span class="post-toc-text">5. display: flex</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-width-fit-content"><span class="post-toc-text">6. width: fit-content</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#垂直居中"><span class="post-toc-text">垂直居中</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-table-cell"><span class="post-toc-text">1. table-cell</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-display-flex"><span class="post-toc-text">2. display: flex</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-绝对定位和负边距"><span class="post-toc-text">3. 绝对定位和负边距</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-绝对定位和0"><span class="post-toc-text">4. 绝对定位和0</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-translate"><span class="post-toc-text">5. translate</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-display-inline-block"><span class="post-toc-text">6. display: inline-block</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-display-flex和margin：auto"><span class="post-toc-text">7.display: flex和margin：auto</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-display-webkit-box"><span class="post-toc-text">8. display: -webkit-box</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-display-webkit-box"><span class="post-toc-text">9. display: -webkit-box</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-CSS-实现元素水平-垂直居中" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CSS 实现元素水平/垂直居中</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-17 13:16:58" datetime="2019-08-17T05:16:58.000Z" itemprop="datePublished">2019-08-17</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><blockquote>
+<p>摘自<a href="https://www.w3cplus.com/css/elements-horizontally-center-with-css.html" target="_blank" rel="noopener">https://www.w3cplus.com/css/elements-horizontally-center-with-css.html</a></p>
+</blockquote>
+<h3 id="1-margin-0-auto"><a href="#1-margin-0-auto" class="headerlink" title="1. margin: 0 auto"></a>1. margin: 0 auto</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.class</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点：实现方法简单易懂，浏览器兼容性强；</li>
+<li>缺点：扩展性差，无法自适应未知项情况</li>
+</ul>
+<h3 id="2-text-align-center"><a href="#2-text-align-center" class="headerlink" title="2. text-align: center"></a>2. text-align: center</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father-class</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">   .son-class &#123;</span><br><span class="line">     display: inline-blick; // 行内元素</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点：简单易懂，扩展性强；</li>
+<li>缺点：需要额外处理inline-block的浏览器兼容性。</li>
+</ul>
+<h3 id="3-float-amp-position"><a href="#3-float-amp-position" class="headerlink" title="3. float&amp;position"></a>3. float&amp;position</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.page-div</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  ul &#123;</span><br><span class="line">    <span class="selector-tag">clear</span>: <span class="selector-tag">left</span>;</span><br><span class="line">    <span class="selector-tag">float</span>: <span class="selector-tag">left</span>;</span><br><span class="line">    <span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line">    <span class="selector-tag">left</span>: 50%; <span class="comment">/*整个分页向右移动宽度的50%*/</span></span><br><span class="line">    <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br><span class="line">    <span class="selector-tag">li</span> &#123;</span><br><span class="line">      <span class="attribute">line-height</span>: <span class="number">25px</span>;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;</span><br><span class="line">      <span class="attribute">display</span>: block;</span><br><span class="line">      <span class="attribute">float</span>: left;</span><br><span class="line">      <span class="attribute">position</span>: relative;</span><br><span class="line">      <span class="attribute">right</span>: <span class="number">50%</span>; <span class="comment">/*将整个分页项向左边移动宽度的50%*/</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点：兼容性强，扩展性强；</li>
+<li>缺点：实现原理较复杂。</li>
+</ul>
+<h3 id="4-positon-absolute"><a href="#4-positon-absolute" class="headerlink" title="4. positon: absolute"></a>4. positon: absolute</h3><ul>
+<li><p>有宽度：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.class</span> &#123;</span><br><span class="line">  <span class="attribute">positon</span>: absolute;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>无宽度：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pagination</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">25px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">position</span>: relative;<span class="comment">/*注意，这里不能是absolute*/</span></span><br><span class="line">  <span class="attribute">right</span>: <span class="number">50%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点：扩展性强，兼容性强;</p>
+</li>
+<li><p>缺点：理解性难。</p>
+<h3 id="5-display-flex"><a href="#5-display-flex" class="headerlink" title="5. display: flex"></a>5. display: flex</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pagination</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: horizontal;</span><br><span class="line">  <span class="attribute">-webkit-box-pack</span>: center;</span><br><span class="line">  <span class="attribute">display</span>: -moz-box;</span><br><span class="line">  <span class="attribute">-moz-box-orient</span>: horizontal;</span><br><span class="line">  <span class="attribute">-moz-box-pack</span>: center;</span><br><span class="line">  <span class="attribute">display</span>: -o-box;</span><br><span class="line">  <span class="attribute">-o-box-orient</span>: horizontal;</span><br><span class="line">  <span class="attribute">-o-box-pack</span>: center;</span><br><span class="line">  <span class="attribute">display</span>: -ms-box;</span><br><span class="line">  <span class="attribute">-ms-box-orient</span>: horizontal;</span><br><span class="line">  <span class="attribute">-ms-box-pack</span>: center;</span><br><span class="line">  <span class="attribute">display</span>: box;</span><br><span class="line">  <span class="attribute">box-orient</span>: horizontal;</span><br><span class="line">  <span class="attribute">box-pack</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">25px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;</span><br><span class="line"><span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点：实现便捷，扩展性强</p>
+</li>
+<li>缺点：兼容性差。<h3 id="6-width-fit-content"><a href="#6-width-fit-content" class="headerlink" title="6. width: fit-content"></a>6. width: fit-content</h3></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">ul</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: -moz-fit-content;</span><br><span class="line">  <span class="attribute">width</span>:-webkit-fit-content;</span><br><span class="line">  <span class="attribute">width</span>: fit-content;</span><br><span class="line">  <span class="attribute">margin-left</span>: auto;</span><br><span class="line">  <span class="attribute">margin-right</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">25px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点：简单易懂，扩展性强;</li>
+<li>缺点：浏览器兼容性差</li>
+</ul>
+<hr>
+<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><blockquote>
+<p>摘自<a href="https://www.cnblogs.com/hutuzhu/p/4450850.html" target="_blank" rel="noopener">https://www.cnblogs.com/hutuzhu/p/4450850.html</a></p>
+</blockquote>
+<h3 id="1-table-cell"><a href="#1-table-cell" class="headerlink" title="1. table-cell"></a>1. table-cell</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: table-cell;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">  <span class="attribute">text-align</span>: center</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-display-flex"><a href="#2-display-flex" class="headerlink" title="2. display: flex"></a>2. display: flex</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: Center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-绝对定位和负边距"><a href="#3-绝对定位和负边距" class="headerlink" title="3. 绝对定位和负边距"></a>3. 绝对定位和负边距</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father-box</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  .son-box &#123;</span><br><span class="line">    <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">    <span class="selector-tag">width</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">height</span>: 50<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">top</span>: 50%;</span><br><span class="line">    <span class="selector-tag">left</span>: 50<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">margin-left</span>: <span class="selector-tag">-50</span>%;</span><br><span class="line">    <span class="selector-tag">margin-top</span>: <span class="selector-tag">-25px</span>;</span><br><span class="line">    <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-绝对定位和0"><a href="#4-绝对定位和0" class="headerlink" title="4. 绝对定位和0"></a>4. 绝对定位和0</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">  <span class="attribute">margin</span>: auto;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>这种方法跟上面的有些类似，但是这里是通过margin:auto和top,left,right,bottom都设置为0实现居中。不过这里得确定内部元素的高度，可以用百分比，比较适合移动端。</li>
+</ul>
+<h3 id="5-translate"><a href="#5-translate" class="headerlink" title="5. translate"></a>5. translate</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-display-inline-block"><a href="#6-display-inline-block" class="headerlink" title="6. display: inline-block"></a>6. display: inline-block</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box7</span>&#123;</span><br><span class="line">  <span class="attribute">text-align</span>:center;</span><br><span class="line">  <span class="attribute">font-size</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box7</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">  <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">  <span class="attribute">display</span>:inline-block;</span><br><span class="line">  <span class="attribute">font-size</span>:<span class="number">16px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box7</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>:inline-block;</span><br><span class="line">  <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过:after来占位</li>
+</ul>
+<h3 id="7-display-flex和margin：auto"><a href="#7-display-flex和margin：auto" class="headerlink" title="7.display: flex和margin：auto"></a>7.display: flex和margin：auto</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box8</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box8</span> <span class="selector-tag">span</span>&#123;<span class="attribute">margin</span>: auto;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="8-display-webkit-box"><a href="#8-display-webkit-box" class="headerlink" title="8. display: -webkit-box"></a>8. display: -webkit-box</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box9</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">    <span class="attribute">-webkit-box-pack</span>:center;</span><br><span class="line">    <span class="attribute">-webkit-box-align</span>:center;</span><br><span class="line">    <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">    <span class="attribute">text-align</span>: center</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-13.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="9-display-webkit-box"><a href="#9-display-webkit-box" class="headerlink" title="9. display: -webkit-box"></a>9. display: -webkit-box</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.floater</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>:left; </span><br><span class="line">    <span class="attribute">height</span>:<span class="number">50%</span>; </span><br><span class="line">    <span class="attribute">margin-bottom</span>:-<span class="number">120px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">    <span class="attribute">clear</span>:both; </span><br><span class="line">    <span class="attribute">height</span>:<span class="number">240px</span>; </span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-24T09:14:22.534Z" itemprop="dateUpdated">2020-04-24 17:14:22</time>
+</span><br>
+
+
+        
+        <a href="/2019-08-17/cka937xbh001fxktpjce0ihiw/" target="_blank" rel="external">https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://flyreve.github.io">
+            <img src="/img/avatar.jpg" alt="flyreve">
+            flyreve
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/&title=《CSS 实现元素水平/垂直居中》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/&title=《CSS 实现元素水平/垂直居中》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CSS 实现元素水平/垂直居中》 — Flyreve's Blog&url=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019-08-20/cka937xaz000ixktpa267r7sc/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vue中监听窗口变化，实现页面响应式</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019-08-16/cka937xao0006xktpyeya6ywy/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">DIV 固定宽高比</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>flyreve &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/&title=《CSS 实现元素水平/垂直居中》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/&title=《CSS 实现元素水平/垂直居中》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CSS 实现元素水平/垂直居中》 — Flyreve's Blog&url=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-08-17/cka937xbh001fxktpjce0ihiw/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQW7CQAwFUO5/aSp1hdQSvu1xodLLCkGTyZuF7dpzu8XX/ft6/Px4/fz+2TfXT8jXOnzh4eHhtV792fVsyestuH5y9R2uN+7F8/Hw8PDWeEkyyO/Kg3uSHiZbjIeHh/deXi9YV0v2623Cw8PD+1+8vPzNU0ueNvDw8PA+jZcH/UkaSLbgbb0WPDw8vJjXG4C99/P6fA8PDw+vNVWvBt9qAzc/XtB7Wzw8PLwN3vUCk+QxGaQlo69CwsDDw8Nb4FXD+vVivWbBPIUUmrl4eHh4h3h5oO8VxNWB1rFDV3h4eHhrvGo4robsXish+eZAvY+Hh4cX8/KbeyP8aot2UjpHDVw8PDy8Me/6tl4Qn7RfJw2LFwMwPDw8vEO8/HXn4FNjsGZJjYeHh3eUlw/7Tw26egV9eZvw8PDw1ni9Zapl8WQk1nsmHh4e3h4vP3SVtwl6iSEfnkVpCQ8PD2+ZVy1Ye+2D6hNGR7Xw8PDwlnmTwf+87TsZnkWTPTw8PLxDvDzoVwf51dTSSxiFgh4PDw/vEK+3WO841Nn5frQdeHh4eAu8amt1kiQm6SRPM1HGw8PDwxvweiOrXrifrJJv9y8lNR4eHt5RXv5zL5Qnz++1iatHFvDw8PDO8nJSMsI/9XLJMYIIiYeHh7fAq/7nfiqsV69ylsPDw8Nb4/WOpU6OXvUaFtU3xMPDw9vm5aE8KcGTY6m9Q7EJFQ8PD2+Pdy9e1aA834hRKwQPDw9vgVdtBEyaF9UWbb6tTRIeHh7egFdNBpO78hSSb+iLe/Hw8PDWeL1W6aRorhbizdEdHh4e3sfwegOqHFxtZxTme3h4eHh/yEtCdj5Im7d9o1Xw8PDw1nhnh0/J8r0xWDlp4eHh4S3wegOwyags2b48CeV/j4eHhzfmfQFKTPk+W7sScAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

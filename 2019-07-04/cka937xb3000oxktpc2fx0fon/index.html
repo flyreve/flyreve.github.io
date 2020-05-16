@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>图片懒加载 | Flyreve&#39;s Blog | F的储物间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="HTML/CSS">
+    <meta name="description" content="1，概念​    使图片仅在浏览器当前视图的情况下，加载图片，减少图片请求数。 2，解决方案 传统解决方案  ​    在img的src属性里存放两个属性，一个为伪属性（存放空白图片），一个为original（存放实际图片），当页面滚动时，遍历当前页面需要懒加载的图片，判断图片是否在当前可视视窗下，若是，则用真实src代替伪属性。  可优化点   通过页面滚动时间的间隔来判断是否进行筛选动作 预加">
+<meta name="keywords" content="HTML&#x2F;CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片懒加载">
+<meta property="og:url" content="https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/index.html">
+<meta property="og:site_name" content="Flyreve&#39;s Blog">
+<meta property="og:description" content="1，概念​    使图片仅在浏览器当前视图的情况下，加载图片，减少图片请求数。 2，解决方案 传统解决方案  ​    在img的src属性里存放两个属性，一个为伪属性（存放空白图片），一个为original（存放实际图片），当页面滚动时，遍历当前页面需要懒加载的图片，判断图片是否在当前可视视窗下，若是，则用真实src代替伪属性。  可优化点   通过页面滚动时间的间隔来判断是否进行筛选动作 预加">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-24T09:14:22.536Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图片懒加载">
+<meta name="twitter:description" content="1，概念​    使图片仅在浏览器当前视图的情况下，加载图片，减少图片请求数。 2，解决方案 传统解决方案  ​    在img的src属性里存放两个属性，一个为伪属性（存放空白图片），一个为original（存放实际图片），当页面滚动时，遍历当前页面需要懒加载的图片，判断图片是否在当前可视视窗下，若是，则用真实src代替伪属性。  可优化点   通过页面滚动时间的间隔来判断是否进行筛选动作 预加">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">flyreve</h5>
+          <a href="mailto:1361901282@qq.com" title="1361901282@qq.com" class="mail">1361901282@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/flyreve" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">图片懒加载</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">图片懒加载</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-04T06:59:01.000Z" itemprop="datePublished" class="page-time">
+  2019-07-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1，概念"><span class="post-toc-text">1，概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2，解决方案"><span class="post-toc-text">2，解决方案</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-html_lazyload" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">图片懒加载</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-04 14:59:01" datetime="2019-07-04T06:59:01.000Z" itemprop="datePublished">2019-07-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="1，概念"><a href="#1，概念" class="headerlink" title="1，概念"></a>1，概念</h3><p>​    使图片仅在浏览器当前视图的情况下，加载图片，减少图片请求数。</p>
+<h3 id="2，解决方案"><a href="#2，解决方案" class="headerlink" title="2，解决方案"></a>2，解决方案</h3><ul>
+<li><strong>传统解决方案</strong></li>
+</ul>
+<p>​    在img的src属性里存放两个属性，一个为伪属性（存放空白图片），一个为original（存放实际图片），当页面滚动时，遍历当前页面需要懒加载的图片，判断图片是否在当前可视视窗下，若是，则用真实src代替伪属性。</p>
+<ul>
+<li><strong>可优化点</strong></li>
+</ul>
+<ol>
+<li>通过页面滚动时间的间隔来判断是否进行筛选动作</li>
+<li>预加载，提前加载屏幕前后的图片</li>
+<li>首先利用span元素占位，判断图片是否在当前可视视窗下，若是，使用img替换span，并加载img中伪元素中的低质量图片，再加载真实的高质量图片</li>
+<li>其他</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-24T09:14:22.536Z" itemprop="dateUpdated">2020-04-24 17:14:22</time>
+</span><br>
+
+
+        
+        <a href="/2019-07-04/cka937xb3000oxktpc2fx0fon/" target="_blank" rel="external">https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://flyreve.github.io">
+            <img src="/img/avatar.jpg" alt="flyreve">
+            flyreve
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML-CSS/">HTML/CSS</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/&title=《图片懒加载》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/&title=《图片懒加载》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《图片懒加载》 — Flyreve's Blog&url=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019-07-04/cka937xbd0015xktp6ngpusdk/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vuex中modules使用</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019-07-04/cka937xbj001jxktp4d2gqjeo/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">生命周期</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>flyreve &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/&title=《图片懒加载》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/&title=《图片懒加载》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《图片懒加载》 — Flyreve's Blog&url=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-07-04/cka937xb3000oxktpc2fx0fon/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3aMZLjMAwEwP3/p33xBZZnAHLPV9WKXF4txVZAwEP+/MTX6/F6d//z9+8+Pz/358aFh4eHd2HqCSz53/ybdyPXrxsPDw/vGm+ziL97fDL15P7n8T9Y8PDw8L6ANwMnpShvqfHw8PD+L95zS9022XmjjIeHh/dtvHa4pFQkrXYbdlzMWvDw8PC6HatoF+l7Pl/Z38PDw8Nb76q3y3QbTOQbZsPZ4uHh4V3g5QvuLJbNQ4S2OBXzxMPDwzvKm0UD7c/+1/rKDyj89RkPDw/vAm8fy27i4PYF5YWqGAIPDw9vxHu+aRMK5McO8qU/iSrw8PDw7vFmG/B5YUg20vKIIQmR60qFh4eHd4HXLuVtcJDM53nM4f4eHh4e3oi334JqF/dZKNyWnAMny/Dw8PAed4VOHb3av47ZEz8ct8LDw8M7ymuDhvagQN4ob55elBk8PDy8Q7x9cJCXgRyQFIZoznh4eHhHeftBNwcCNocPorKBh4eHd4GXPyxpYfcRbTJ+Pg4eHh7e7/DypXwYpK7/K2mmo18MeHh4eAveZjnev47NYYUiQMHDw8M7ymub6VlUUeTKo+tD4oKHh4d3iLdZmk8dGmjHL+IMPDw8vGu8Nj44tTHWruH5c+vH4+Hh4S361eTH/6z9TcrD5hhBNEM8PDy8Q7zkpvzgab6ptmnZi/ng4eHhXeZFP/LjQtJOaxMof9gAw8PDw7vMS4LUWSt8qkEvSgseHh7eUd6rvPIINWm423A2KRV4eHh4t3mzEDaPaJMRZpM+fHgLDw8Pr+S1xSCf1uz7vCmPCgMeHh7eNd6swc1D1fyvbQWLCgMeHh7eP+W1jFl40cYZxwoDHh4e3jVesrjnS/nmeMGHOeDh4eFd4+VBQLuhleM3W1x4eHh4v8nbLOWnjgK0YfGBPT08PDy8Ce8P2QN9gnzc0BAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
