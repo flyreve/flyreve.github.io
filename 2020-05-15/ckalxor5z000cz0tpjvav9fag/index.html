@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Angular pdd | Flyreve&#39;s Blog | F的储物间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Angular">
+    <meta name="description" content="一，框架对比 Vue：轻量级，快速开发，较小工程 React：所有都是Js，依赖各种开源类库 Angular：大型项目，多人合作开发，开箱即用                                                                                                             二，安装 npm i -g @angul">
+<meta name="keywords" content="Angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular pdd">
+<meta property="og:url" content="https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/index.html">
+<meta property="og:site_name" content="Flyreve&#39;s Blog">
+<meta property="og:description" content="一，框架对比 Vue：轻量级，快速开发，较小工程 React：所有都是Js，依赖各种开源类库 Angular：大型项目，多人合作开发，开箱即用                                                                                                             二，安装 npm i -g @angul">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-17.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-18.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-19.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-20.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-22.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-2.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-13.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-21.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-23.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-25.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-26.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-27.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-28.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-29.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-30.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-31.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-32.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-33.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-34.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-35.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-36.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-37.png">
+<meta property="og:image" content="https://flyreve.github.io/images/pasted-38.png">
+<meta property="og:updated_time" content="2020-05-22T10:16:37.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular pdd">
+<meta name="twitter:description" content="一，框架对比 Vue：轻量级，快速开发，较小工程 React：所有都是Js，依赖各种开源类库 Angular：大型项目，多人合作开发，开箱即用                                                                                                             二，安装 npm i -g @angul">
+<meta name="twitter:image" content="https://flyreve.github.io/images/pasted-17.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">flyreve</h5>
+          <a href="mailto:1361901282@qq.com" title="1361901282@qq.com" class="mail">1361901282@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/flyreve" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Angular pdd</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Angular pdd</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-05-15T03:43:40.000Z" itemprop="datePublished" class="page-time">
+  2020-05-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一，框架对比"><span class="post-toc-text">一，框架对比</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二，安装"><span class="post-toc-text">二，安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三，项目目录"><span class="post-toc-text">三，项目目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四，Typescript"><span class="post-toc-text">四，Typescript</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#五，其他"><span class="post-toc-text">五，其他</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#课程目录"><span class="post-toc-text">课程目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-2-工程源码文件结构"><span class="post-toc-text">2-2 工程源码文件结构</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-3-【初识组件】-顶部TabBar"><span class="post-toc-text">2-3 【初识组件】 顶部TabBar</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-4-【接口Interface-Flex】"><span class="post-toc-text">2-4 【接口Interface Flex】</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-5-【ngFor指令-事件的处理和样式绑定】"><span class="post-toc-text">2-5 【ngFor指令 事件的处理和样式绑定】</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-6-【组件封装】"><span class="post-toc-text">2-6 【组件封装】</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-7-【ngif-组件的输入输出】"><span class="post-toc-text">2-7 【ngif 组件的输入输出】</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-8-样式绑定的几种方式"><span class="post-toc-text">2-8 样式绑定的几种方式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-1-组件生命周期（1）"><span class="post-toc-text">3-1 组件生命周期（1）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-2-组件生命周期（2）"><span class="post-toc-text">3-2 组件生命周期（2）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-3-在组件类中引用模板"><span class="post-toc-text">3-3 在组件类中引用模板</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-4-在模板中引用多个元素"><span class="post-toc-text">3-4 在模板中引用多个元素</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-5-轮播图组件"><span class="post-toc-text">3-5 轮播图组件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-6-双向绑定"><span class="post-toc-text">3-6 双向绑定</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-7-模块的概念"><span class="post-toc-text">3-7 模块的概念</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-8-模块的划分"><span class="post-toc-text">3-8 模块的划分</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-1-什么是注解"><span class="post-toc-text">4-1 什么是注解</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-2-指令的概念（1）"><span class="post-toc-text">4-2 指令的概念（1）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-3-指令的概念（2）"><span class="post-toc-text">4-3 指令的概念（2）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-4-指令的事件绑定和样式绑定"><span class="post-toc-text">4-4 指令的事件绑定和样式绑定</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-5-组件嵌套和投影组件（1）"><span class="post-toc-text">4-5 组件嵌套和投影组件（1）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-6-组件嵌套和投影组件（2）"><span class="post-toc-text">4-6 组件嵌套和投影组件（2）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-7-路由概念"><span class="post-toc-text">4-7 路由概念</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-8-路由实战"><span class="post-toc-text">4-8 路由实战</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-9-路由URL和参数（1）"><span class="post-toc-text">4-9 路由URL和参数（1）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-10-路由URL和参数（2）"><span class="post-toc-text">4-10 路由URL和参数（2）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-11-路由URL和参数（3）"><span class="post-toc-text">4-11 路由URL和参数（3）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-12-管道的概念"><span class="post-toc-text">4-12 管道的概念</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-13-依赖注入（1）"><span class="post-toc-text">4-13 依赖注入（1）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-14-依赖注入（2）"><span class="post-toc-text">4-14 依赖注入（2）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-15-脏值检测（1）"><span class="post-toc-text">4-15 脏值检测（1）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-16-脏值检测（2）"><span class="post-toc-text">4-16 脏值检测（2）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-17-脏值检测（3）"><span class="post-toc-text">4-17 脏值检测（3）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-1-HTTP概览"><span class="post-toc-text">5-1 HTTP概览</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-2-Postman和RestClient调试HTTP"><span class="post-toc-text">5-2 Postman和RestClient调试HTTP</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-3-Rest-API"><span class="post-toc-text">5-3 Rest API</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-4-HttpClient-修改"><span class="post-toc-text">5-4 HttpClient 修改</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-5-Http拦截器-HttpInterceptor"><span class="post-toc-text">5-5 Http拦截器 HttpInterceptor</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-6-rxjs-初步了解"><span class="post-toc-text">5-6 rxjs 初步了解</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-7-操作符和Async管道"><span class="post-toc-text">5-7 操作符和Async管道</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-8-使用rxjs打造倒计时组件"><span class="post-toc-text">5-8 使用rxjs打造倒计时组件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-1-创建底部TabBar（1）"><span class="post-toc-text">6-1 创建底部TabBar（1）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-2-创建底部Tabbar（2）"><span class="post-toc-text">6-2 创建底部Tabbar（2）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-3-底部TabBar切换路由"><span class="post-toc-text">6-3 底部TabBar切换路由</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-4-使用rxjs高阶操作符添加广告位"><span class="post-toc-text">6-4 使用rxjs高阶操作符添加广告位</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-5-创建垂直网格组件"><span class="post-toc-text">6-5 创建垂直网格组件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-6-创建产品卡片组件（1）"><span class="post-toc-text">6-6 创建产品卡片组件（1）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-7-创建产品卡片组件（2）"><span class="post-toc-text">6-7 创建产品卡片组件（2）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-8-实战产品瓷砖组件"><span class="post-toc-text">6-8 实战产品瓷砖组件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-1-实现后退按钮组件"><span class="post-toc-text">7-1 实现后退按钮组件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-2-实现商品画廊（1）"><span class="post-toc-text">7-2 实现商品画廊（1）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-3-实现商品画廊（2）"><span class="post-toc-text">7-3 实现商品画廊（2）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-4-实现拼单列表"><span class="post-toc-text">7-4 实现拼单列表</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Angular-pdd" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Angular pdd</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-05-15 11:43:40" datetime="2020-05-15T03:43:40.000Z" itemprop="datePublished">2020-05-15</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="一，框架对比"><a href="#一，框架对比" class="headerlink" title="一，框架对比"></a>一，框架对比</h2><ul>
+<li><code>Vue</code>：轻量级，快速开发，较小工程</li>
+<li><code>React</code>：所有都是Js，依赖各种开源类库</li>
+<li><code>Angular</code>：大型项目，多人合作开发，开箱即用</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-17.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="二，安装"><a href="#二，安装" class="headerlink" title="二，安装"></a>二，安装</h2><ol>
+<li><code>npm i -g @angular/cli</code></li>
+<li><code>ng version</code></li>
+<li><code>ng new projectName</code></li>
+<li><code>ng serve</code></li>
+</ol>
+<h2 id="三，项目目录"><a href="#三，项目目录" class="headerlink" title="三，项目目录"></a>三，项目目录</h2><ul>
+<li>版本号：<strong>~</strong>：锁定版本号前两位、<strong>^</strong>：锁定版本号前一位</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-18.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="四，Typescript"><a href="#四，Typescript" class="headerlink" title="四，Typescript"></a>四，Typescript</h3><ul>
+<li></li>
+</ul>
+<h2 id="五，其他"><a href="#五，其他" class="headerlink" title="五，其他"></a>五，其他</h2><ul>
+<li>浏览器插件：<strong>Augury</strong></li>
+</ul>
+<h2 id="课程目录"><a href="#课程目录" class="headerlink" title="课程目录"></a>课程目录</h2><h5 id="2-2-工程源码文件结构"><a href="#2-2-工程源码文件结构" class="headerlink" title="2-2 工程源码文件结构"></a>2-2 工程源码文件结构</h5><ul>
+<li>多环境</li>
+<li>组件装饰器 <code>@Component</code>：标记一个class为组件</li>
+<li>模块装饰器<code>@NgModule</code></li>
+</ul>
+<h5 id="2-3-【初识组件】-顶部TabBar"><a href="#2-3-【初识组件】-顶部TabBar" class="headerlink" title="2-3 【初识组件】 顶部TabBar"></a>2-3 【初识组件】 顶部TabBar</h5><ul>
+<li><a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener">前端宏编程</a></li>
+<li><strong>*ngFor</strong></li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-19.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h5 id="2-4-【接口Interface-Flex】"><a href="#2-4-【接口Interface-Flex】" class="headerlink" title="2-4 【接口Interface Flex】"></a>2-4 【接口Interface Flex】</h5><ul>
+<li><p><strong>Interface</strong>类型命名，可选类型：函数、索引、类</p>
+</li>
+<li><p>手机真机调试：<code>ng serve --host 0.0.0.0</code></p>
+</li>
+<li><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类</span></span><br><span class="line"><span class="keyword">interface</span> TopMenu &#123;</span><br><span class="line">    titel: <span class="built_in">string</span>;</span><br><span class="line">    link?: <span class="built_in">string</span>;</span><br><span class="line">    readonly id: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 函数</span></span><br><span class="line"><span class="keyword">interface</span> AddFunc &#123;</span><br><span class="line">    (x: <span class="built_in">number</span>, y: <span class="built_in">number</span>): <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 索引</span></span><br><span class="line"><span class="keyword">interface</span> Dict &#123;</span><br><span class="line">    [key: <span class="built_in">string</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> obj &#123;</span><br><span class="line">    menus: TopMenu[] = [</span><br><span class="line">        &#123;</span><br><span class="line">            title: <span class="string">'1'</span>,</span><br><span class="line">            id: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    ];</span><br><span class="line">    </span><br><span class="line">    add: AddFunc = <span class="function">(<span class="params">x, y</span>) =&gt;</span> x + y</span><br><span class="line">    </span><br><span class="line">    dict: Dict = &#123;</span><br><span class="line">        a: <span class="string">'1'</span>,</span><br><span class="line">        b: <span class="string">'2'</span></span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.dict.a)</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="2-5-【ngFor指令-事件的处理和样式绑定】"><a href="#2-5-【ngFor指令-事件的处理和样式绑定】" class="headerlink" title="2-5 【ngFor指令 事件的处理和样式绑定】"></a>2-5 【ngFor指令 事件的处理和样式绑定】</h5><ul>
+<li>获取第一个和最后一个</li>
+<li>获取奇和偶</li>
+<li><p><code>trackBy：menu ? menu.id : null</code></p>
+</li>
+<li><p><code>[class.className] =  &quot;false&quot;</code></p>
+</li>
+<li><p><code>[]</code>：数据绑定，<code>()</code>：事件绑定</p>
+</li>
+</ul>
+<h5 id="2-6-【组件封装】"><a href="#2-6-【组件封装】" class="headerlink" title="2-6 【组件封装】"></a>2-6 【组件封装】</h5><ul>
+<li><code>ng generate component 路径名称/组件名（驼峰）</code></li>
+<li><code>ng g c 路径名称/组件名</code></li>
+<li>使用<code>index.ts</code></li>
+</ul>
+<h5 id="2-7-【ngif-组件的输入输出】"><a href="#2-7-【ngif-组件的输入输出】" class="headerlink" title="2-7 【ngif 组件的输入输出】"></a>2-7 【ngif 组件的输入输出】</h5><ul>
+<li><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngIf</span>=<span class="string">"条件表达式; then thenTemplate; else elseContent"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ng-template</span> #<span class="attr">thenTemplate</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ng-template</span> #<span class="attr">elseContent</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>@Input</code>装饰器</p>
+</li>
+<li><code>@Output</code>装饰器</li>
+<li><code>EventEmitter()</code>：事件发射器</li>
+</ul>
+<h5 id="2-8-样式绑定的几种方式"><a href="#2-8-样式绑定的几种方式" class="headerlink" title="2-8 样式绑定的几种方式"></a>2-8 样式绑定的几种方式</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-20.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h5 id="3-1-组件生命周期（1）"><a href="#3-1-组件生命周期（1）" class="headerlink" title="3-1 组件生命周期（1）"></a>3-1 组件生命周期（1）</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-22.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h5 id="3-2-组件生命周期（2）"><a href="#3-2-组件生命周期（2）" class="headerlink" title="3-2 组件生命周期（2）"></a>3-2 组件生命周期（2）</h5><ul>
+<li><code>&lt;ng-content /&gt;</code> 同<code>slot</code></li>
+</ul>
+<h5 id="3-3-在组件类中引用模板"><a href="#3-3-在组件类中引用模板" class="headerlink" title="3-3 在组件类中引用模板"></a>3-3 在组件类中引用模板</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-2.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>同vue中的 <code>ref</code></li>
+</ul>
+<h5 id="3-4-在模板中引用多个元素"><a href="#3-4-在模板中引用多个元素" class="headerlink" title="3-4 在模板中引用多个元素"></a>3-4 在模板中引用多个元素</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-13.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ViewChildren(<span class="string">'img'</span>) imgs: QueryList&lt;ElementRef&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Renderer2</code></p>
+</li>
+</ul>
+<h5 id="3-5-轮播图组件"><a href="#3-5-轮播图组件" class="headerlink" title="3-5 轮播图组件"></a>3-5 轮播图组件</h5><ul>
+<li><code>overflow-scrolling: touch</code></li>
+<li><p><code>object-fit: cover</code></p>
+</li>
+<li><p><code>scrollLeft</code> ，<code>scrollWidth</code></p>
+</li>
+<li><p><code>scroll-snap-type: x mandatory</code></p>
+</li>
+<li><p>解决<strong>内存泄漏</strong></p>
+</li>
+</ul>
+<h5 id="3-6-双向绑定"><a href="#3-6-双向绑定" class="headerlink" title="3-6 双向绑定"></a>3-6 双向绑定</h5><ul>
+<li><code>FormsModule</code></li>
+<li><code>[(ngModel)] = &#39;变量&#39;</code></li>
+<li>使用<code>get</code>、<code>set</code> 实现自定义双向绑定</li>
+<li><code>get</code>同 <code>computed</code></li>
+</ul>
+<h5 id="3-7-模块的概念"><a href="#3-7-模块的概念" class="headerlink" title="3-7 模块的概念"></a>3-7 模块的概念</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-21.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h5 id="3-8-模块的划分"><a href="#3-8-模块的划分" class="headerlink" title="3-8 模块的划分"></a>3-8 模块的划分</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-23.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-25.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h5 id="4-1-什么是注解"><a href="#4-1-什么是注解" class="headerlink" title="4-1 什么是注解"></a>4-1 什么是注解</h5><ul>
+<li>调试</li>
+<li><p><code>Object.defineProperty</code></p>
+</li>
+<li><p><code>PropertyDescriptor</code></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/</a></p>
+</li>
+</ul>
+<h5 id="4-2-指令的概念（1）"><a href="#4-2-指令的概念（1）" class="headerlink" title="4-2 指令的概念（1）"></a>4-2 指令的概念（1）</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-26.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-27.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>网格布局：<code>display: grid</code></li>
+<li><code>@Directive</code></li>
+</ul>
+<h5 id="4-3-指令的概念（2）"><a href="#4-3-指令的概念（2）" class="headerlink" title="4-3 指令的概念（2）"></a>4-3 指令的概念（2）</h5><h5 id="4-4-指令的事件绑定和样式绑定"><a href="#4-4-指令的事件绑定和样式绑定" class="headerlink" title="4-4 指令的事件绑定和样式绑定"></a>4-4 指令的事件绑定和样式绑定</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-28.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h5 id="4-5-组件嵌套和投影组件（1）"><a href="#4-5-组件嵌套和投影组件（1）" class="headerlink" title="4-5 组件嵌套和投影组件（1）"></a>4-5 组件嵌套和投影组件（1）</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-29.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><p>投影组件 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ng-content select="span" /&gt;</span><br><span class="line">&lt;ng-content select=".classNmae" /&gt;</span><br><span class="line">&lt;ng-content select="[derectiveName]" /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="4-6-组件嵌套和投影组件（2）"><a href="#4-6-组件嵌套和投影组件（2）" class="headerlink" title="4-6 组件嵌套和投影组件（2）"></a>4-6 组件嵌套和投影组件（2）</h5><h5 id="4-7-路由概念"><a href="#4-7-路由概念" class="headerlink" title="4-7 路由概念"></a>4-7 路由概念</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-30.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-31.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><p><code>&lt;router-outlet/&gt;</code></p>
+</li>
+<li><p><code>forRoot</code>，<code>RouterModule</code></p>
+</li>
+</ul>
+<h5 id="4-8-路由实战"><a href="#4-8-路由实战" class="headerlink" title="4-8 路由实战"></a>4-8 路由实战</h5><h5 id="4-9-路由URL和参数（1）"><a href="#4-9-路由URL和参数（1）" class="headerlink" title="4-9 路由URL和参数（1）"></a>4-9 路由URL和参数（1）</h5><ul>
+<li><code>pathMatch</code></li>
+</ul>
+<h5 id="4-10-路由URL和参数（2）"><a href="#4-10-路由URL和参数（2）" class="headerlink" title="4-10 路由URL和参数（2）"></a>4-10 路由URL和参数（2）</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-32.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><code>constructor(private route: ActiveRouter)</code></li>
+</ul>
+<h5 id="4-11-路由URL和参数（3）"><a href="#4-11-路由URL和参数（3）" class="headerlink" title="4-11 路由URL和参数（3）"></a>4-11 路由URL和参数（3）</h5><ul>
+<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a [routerLink]="['grand']" routerLinkActive="active" [queryParams]="&#123;name: 'zhangsan'&#125;"&gt;link btn &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>routerLinkActive</code>样式</p>
+</li>
+<li><p><code>queryParams</code></p>
+</li>
+</ul>
+<h5 id="4-12-管道的概念"><a href="#4-12-管道的概念" class="headerlink" title="4-12 管道的概念"></a>4-12 管道的概念</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-33.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    &#123;&#123; obj | json&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    &#123;&#123; data | date: 'MM-dd' &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    &#123;&#123; price | currency: 'CNY':'symbol':'0.0-2' &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>registerLocaleData(localZh, &#39;zh&#39;)</code></p>
+</li>
+<li><p>使用 <code>@Pipe</code> 自定义管道</p>
+</li>
+</ul>
+<h5 id="4-13-依赖注入（1）"><a href="#4-13-依赖注入（1）" class="headerlink" title="4-13 依赖注入（1）"></a>4-13 依赖注入（1）</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-34.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li><code>@Injectable()</code>、<code>providers</code>、<code>Injector.create()</code></li>
+</ul>
+<h5 id="4-14-依赖注入（2）"><a href="#4-14-依赖注入（2）" class="headerlink" title="4-14 依赖注入（2）"></a>4-14 依赖注入（2）</h5><ul>
+<li><p><code>new InjectionToken&lt;string&gt;(&#39;baseUrl&#39;)</code></p>
+</li>
+<li><p>使用固定参数</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Injectable(&#123;</span><br><span class="line">    providedIn: <span class="string">'root'</span></span><br><span class="line">    <span class="comment">// providedIn: ModuleName</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="4-15-脏值检测（1）"><a href="#4-15-脏值检测（1）" class="headerlink" title="4-15 脏值检测（1）"></a>4-15 脏值检测（1）</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-35.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h5 id="4-16-脏值检测（2）"><a href="#4-16-脏值检测（2）" class="headerlink" title="4-16 脏值检测（2）"></a>4-16 脏值检测（2）</h5><h5 id="4-17-脏值检测（3）"><a href="#4-17-脏值检测（3）" class="headerlink" title="4-17 脏值检测（3）"></a>4-17 脏值检测（3）</h5><ul>
+<li><p>使用<code>ngZone.runOutsideAngular</code>和异步操作躲避脏值检测</p>
+</li>
+<li><p>使用<code>Dom</code>操作代替不合理的数据绑定</p>
+</li>
+<li><p>使用<code>Renderer</code>代替普通的<code>Dom</code>操作，更加安全</p>
+</li>
+<li><p>在类中使用管道</p>
+</li>
+<li><p>通过 <code>OnPush</code>提高性能：<code>changeDetection:ChangeDetectionStrategy.OnPush</code></p>
+</li>
+<li><p>使用 <code>ChangeDetectorRef</code>、<code>markForCheck()</code> 手动触发脏值检测</p>
+</li>
+</ul>
+<h5 id="5-1-HTTP概览"><a href="#5-1-HTTP概览" class="headerlink" title="5-1 HTTP概览"></a>5-1 HTTP概览</h5><p><img src="\images\pasted-36.png" alt></p>
+<ul>
+<li>传统页面请求：<code>Response</code>返回<code>html</code>直接浏览器渲染</li>
+</ul>
+<h5 id="5-2-Postman和RestClient调试HTTP"><a href="#5-2-Postman和RestClient调试HTTP" class="headerlink" title="5-2 Postman和RestClient调试HTTP"></a>5-2 Postman和RestClient调试HTTP</h5><h5 id="5-3-Rest-API"><a href="#5-3-Rest-API" class="headerlink" title="5-3 Rest API"></a>5-3 Rest API</h5><h5 id="5-4-HttpClient-修改"><a href="#5-4-HttpClient-修改" class="headerlink" title="5-4 HttpClient 修改"></a>5-4 HttpClient 修改</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-37.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>http异步调用不会引发<strong>脏值检测</strong></li>
+</ul>
+<h5 id="5-5-Http拦截器-HttpInterceptor"><a href="#5-5-Http拦截器-HttpInterceptor" class="headerlink" title="5-5 Http拦截器 HttpInterceptor"></a>5-5 Http拦截器 HttpInterceptor</h5><ul>
+<li><p>实现可注入对象<code>HttpInterceptor</code></p>
+</li>
+<li><p><code>pipe</code>、<code>t ap</code></p>
+</li>
+</ul>
+<h5 id="5-6-rxjs-初步了解"><a href="#5-6-rxjs-初步了解" class="headerlink" title="5-6 rxjs 初步了解"></a>5-6 rxjs 初步了解</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="\images\pasted-38.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<ul>
+<li>流的状态：next，error，complete</li>
+</ul>
+<h5 id="5-7-操作符和Async管道"><a href="#5-7-操作符和Async管道" class="headerlink" title="5-7 操作符和Async管道"></a>5-7 操作符和Async管道</h5><ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">selectedTabLink$: Observable&lt;string&gt;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.selectedTabLink$ = <span class="keyword">this</span>.route.paramMap.pipe(</span><br><span class="line">	filter(<span class="function"><span class="params">params</span> =&gt;</span> params.has(<span class="string">'tabLink'</span>))</span><br><span class="line">    map(<span class="function"><span class="params">params</span> =&gt;</span> params.get(<span class="string">'tabLink'</span>))</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngIf</span>=<span class="string">"selectedTabLink$ | async === 'hot'"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取消订阅：<code>this.sub.unsubscribe()</code></p>
+</li>
+</ul>
+<h5 id="5-8-使用rxjs打造倒计时组件"><a href="#5-8-使用rxjs打造倒计时组件" class="headerlink" title="5-8 使用rxjs打造倒计时组件"></a>5-8 使用rxjs打造倒计时组件</h5><ul>
+<li><code>interval(1000)</code></li>
+<li><p>操作符<code>takeWhile(gap =&gt; gap &gt; 0)</code></p>
+</li>
+<li><p>操作符<code>tap</code></p>
+</li>
+</ul>
+<h5 id="6-1-创建底部TabBar（1）"><a href="#6-1-创建底部TabBar（1）" class="headerlink" title="6-1 创建底部TabBar（1）"></a>6-1 创建底部TabBar（1）</h5><h5 id="6-2-创建底部Tabbar（2）"><a href="#6-2-创建底部Tabbar（2）" class="headerlink" title="6-2 创建底部Tabbar（2）"></a>6-2 创建底部Tabbar（2）</h5><ul>
+<li><code>enableTracing: true</code> 开启路由事件</li>
+</ul>
+<h5 id="6-3-底部TabBar切换路由"><a href="#6-3-底部TabBar切换路由" class="headerlink" title="6-3 底部TabBar切换路由"></a>6-3 底部TabBar切换路由</h5><h5 id="6-4-使用rxjs高阶操作符添加广告位"><a href="#6-4-使用rxjs高阶操作符添加广告位" class="headerlink" title="6-4 使用rxjs高阶操作符添加广告位"></a>6-4 使用rxjs高阶操作符添加广告位</h5><ul>
+<li><p><code>ng-container</code>不增加dom节点</p>
+</li>
+<li><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ng-container</span> *<span class="attr">ngIf</span>=<span class="string">"val as val1"</span>&gt;</span><span class="tag">&lt;/<span class="name">ng-container</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>switchMap</code>实现串流</p>
+</li>
+<li><p><code>object-fit: contain</code></p>
+</li>
+</ul>
+<h5 id="6-5-创建垂直网格组件"><a href="#6-5-创建垂直网格组件" class="headerlink" title="6-5 创建垂直网格组件"></a>6-5 创建垂直网格组件</h5><h5 id="6-6-创建产品卡片组件（1）"><a href="#6-6-创建产品卡片组件（1）" class="headerlink" title="6-6 创建产品卡片组件（1）"></a>6-6 创建产品卡片组件（1）</h5><h5 id="6-7-创建产品卡片组件（2）"><a href="#6-7-创建产品卡片组件（2）" class="headerlink" title="6-7 创建产品卡片组件（2）"></a>6-7 创建产品卡片组件（2）</h5><ul>
+<li><code>@HostBinding</code>样式绑定</li>
+</ul>
+<h5 id="6-8-实战产品瓷砖组件"><a href="#6-8-实战产品瓷砖组件" class="headerlink" title="6-8 实战产品瓷砖组件"></a>6-8 实战产品瓷砖组件</h5><h5 id="7-1-实现后退按钮组件"><a href="#7-1-实现后退按钮组件" class="headerlink" title="7-1 实现后退按钮组件"></a>7-1 实现后退按钮组件</h5><h5 id="7-2-实现商品画廊（1）"><a href="#7-2-实现商品画廊（1）" class="headerlink" title="7-2 实现商品画廊（1）"></a>7-2 实现商品画廊（1）</h5><h5 id="7-3-实现商品画廊（2）"><a href="#7-3-实现商品画廊（2）" class="headerlink" title="7-3 实现商品画廊（2）"></a>7-3 实现商品画廊（2）</h5><h5 id="7-4-实现拼单列表"><a href="#7-4-实现拼单列表" class="headerlink" title="7-4 实现拼单列表"></a>7-4 实现拼单列表</h5>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-05-22T10:16:37.765Z" itemprop="dateUpdated">2020-05-22 18:16:37</time>
+</span><br>
+
+
+        
+        <a href="/2020-05-15/ckalxor5z000cz0tpjvav9fag/" target="_blank" rel="external">https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://flyreve.github.io">
+            <img src="/img/avatar.jpg" alt="flyreve">
+            flyreve
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/&title=《Angular pdd》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/&title=《Angular pdd》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Angular pdd》 — Flyreve's Blog&url=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020-04-24/ckalxor6j001mz0tpxxzfdzpm/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">No title</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>flyreve &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/&title=《Angular pdd》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/&title=《Angular pdd》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Angular pdd》 — Flyreve's Blog&url=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2020-05-15/ckalxor5z000cz0tpjvav9fag/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3aS27jQAwFwNz/0p7tAI7l90i14QClleGPmqUA3QzJn5/4ejxdP6Pr/9++en1iXTw8PLx7131cXs/fuf7V9f3zd/I7vIkBDw8P7xhvtok//7ZY+HKtV6Q8Zjw8PLzv4eWLtVlu8n08PDy8v8tLUuE8IU6OBzw8PLxv47W3y7+fv74+Ko7XWvDw8PAmNYFV4+qTr4/09/Dw8PDWXfV2w803/TyxXkWLh4eHd4CXb7j7IPZn1yxOPDw8vM/w2qLAdUn3sb5WpRM8PDy8W3lJgnsijb73kHhTn8bDw8P7CC8/HpL389JGexi8iRMPDw/vGO86ad60/4cbelCGiA4YPDw8vAO8Nr1O3tkElB8AdQsNDw8P7yZeXibIS7qbAYKirdW2vvDw8PBu5eVBbwoNSaCzsYNopgwPDw/vJl6e8ubjAu0jyAFtEw4PDw/vBG8z0pSHOwO0I1+/fAcPDw/vGC9vJuX42TDB5vCI8nc8PDy8NS/Hnx4myO/WtuLw8PDw7uXNNtl2rGr2+NoZql9iw8PDwzvM2ye+eZq+eUBF2o2Hh4d3gLcvtiaf7tPl9qgYVlzw8PDwgtXzcavNFp800trHFP158PDw8A7wcli7QLvF31WMwMPDw/sMb1YaaJPgdoRr1nh72QbDw8PDO8DLg8hb/rPDZjNEG50heHh4eLfy2oJCW3TIH8qmzVaMXuHh4eEteG0Bt02y89DbIkVdjMDDw8Nb8B7l1RYXZkMG7YovP8XDw8M7wGsbTm1pdVbG3QxsDS88PDy8kjcrku637xy/uTMeHh7eOd5saCAZwMqLvLMxrDd3w8PDw/sCXh7WrBycP8QoWjw8PLwv4CXlhra0sRkv+FBKjYeHhzcqRsy272v2vqSLh4eH93le+w9/e1TkAW3Kuzf09/Dw8PDer/4PiQwr8N/SCWYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

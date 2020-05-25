@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Vue项目开发01-项目初始化 | Flyreve&#39;s Blog | F的储物间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Vue">
+    <meta name="description" content="一，vue-cli搭建1. 安装 node(使用npm包管理工具)2. 安装 git(版本管理)3. 全局安装 webpacknpm install webapck -g webpack4.0以上需要安装webpack-cli npm install webpack-cli -g 4. 安装vue-clivue-cli已经集成了webpack-dev-server，支持热更新，安装完成后使用vue">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue项目开发01-项目初始化">
+<meta property="og:url" content="https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/index.html">
+<meta property="og:site_name" content="Flyreve&#39;s Blog">
+<meta property="og:description" content="一，vue-cli搭建1. 安装 node(使用npm包管理工具)2. 安装 git(版本管理)3. 全局安装 webpacknpm install webapck -g webpack4.0以上需要安装webpack-cli npm install webpack-cli -g 4. 安装vue-clivue-cli已经集成了webpack-dev-server，支持热更新，安装完成后使用vue">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-24T09:14:22.536Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue项目开发01-项目初始化">
+<meta name="twitter:description" content="一，vue-cli搭建1. 安装 node(使用npm包管理工具)2. 安装 git(版本管理)3. 全局安装 webpacknpm install webapck -g webpack4.0以上需要安装webpack-cli npm install webpack-cli -g 4. 安装vue-clivue-cli已经集成了webpack-dev-server，支持热更新，安装完成后使用vue">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">flyreve</h5>
+          <a href="mailto:1361901282@qq.com" title="1361901282@qq.com" class="mail">1361901282@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                类别
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/flyreve" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vue项目开发01-项目初始化</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vue项目开发01-项目初始化</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-09T05:31:26.000Z" itemprop="datePublished" class="page-time">
+  2019-05-09
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一，vue-cli搭建"><span class="post-toc-text">一，vue-cli搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-安装-node-使用npm包管理工具"><span class="post-toc-text">1. 安装 node(使用npm包管理工具)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-安装-git-版本管理"><span class="post-toc-text">2. 安装 git(版本管理)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-全局安装-webpack"><span class="post-toc-text">3. 全局安装 webpack</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-安装vue-cli"><span class="post-toc-text">4. 安装vue-cli</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-构建项目"><span class="post-toc-text">5. 构建项目</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-启动项目"><span class="post-toc-text">6. 启动项目</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二，基础配置"><span class="post-toc-text">二，基础配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-favicon设置"><span class="post-toc-text">1. favicon设置</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-reset-css"><span class="post-toc-text">2.reset.css</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-使用less"><span class="post-toc-text">3.使用less</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-移动端配置"><span class="post-toc-text">4.移动端配置</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-使用iconfont-使用styl-配置别名"><span class="post-toc-text">6.使用iconfont,使用styl,配置别名</span></a></li></ol></li>
+        </nav>
+    </aside>
+
+
+<article id="post-vue_Vue Cli" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vue项目开发01-项目初始化</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-09 13:31:26" datetime="2019-05-09T05:31:26.000Z" itemprop="datePublished">2019-05-09</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="一，vue-cli搭建"><a href="#一，vue-cli搭建" class="headerlink" title="一，vue-cli搭建"></a>一，vue-cli搭建</h1><h5 id="1-安装-node-使用npm包管理工具"><a href="#1-安装-node-使用npm包管理工具" class="headerlink" title="1. 安装 node(使用npm包管理工具)"></a>1. 安装 <strong>node</strong>(使用npm包管理工具)</h5><h5 id="2-安装-git-版本管理"><a href="#2-安装-git-版本管理" class="headerlink" title="2. 安装 git(版本管理)"></a>2. 安装 <strong>git</strong>(版本管理)</h5><h5 id="3-全局安装-webpack"><a href="#3-全局安装-webpack" class="headerlink" title="3. 全局安装 webpack"></a>3. 全局安装 <strong>webpack</strong></h5><pre><code>npm install webapck -g
+</code></pre><p><em>webpack4.0以上需要安装webpack-cli</em></p>
+<pre><code>npm install webpack-cli -g
+</code></pre><h5 id="4-安装vue-cli"><a href="#4-安装vue-cli" class="headerlink" title="4. 安装vue-cli"></a>4. 安装<strong>vue-cli</strong></h5><p><code>vue-cli</code>已经集成了<code>webpack-dev-server</code>，支持热更新，安装完成后使用<code>vue -V</code>测试</p>
+<pre><code>npm install --global vue-cli
+</code></pre><h5 id="5-构建项目"><a href="#5-构建项目" class="headerlink" title="5. 构建项目"></a>5. 构建项目</h5><pre><code>vue init webpack new-project
+</code></pre><h5 id="6-启动项目"><a href="#6-启动项目" class="headerlink" title="6. 启动项目"></a>6. 启动项目</h5><pre><code>npm run dev
+</code></pre><p><em>项目目录结构</em></p>
+<pre><code>|-- new-project
+    |-- .babelrc
+    |-- .editorc
+    |-- .eslinti
+    |-- .eslintrc.js            //ES语法检查配置
+    |-- .gitignore
+    |-- .postcssrc.js
+    |-- index.html              //入口页面
+    |-- package-lock.json
+    |-- package.json            //项目描述文件
+    |-- README.md
+    |-- build                   //构建脚本目录
+    |-- config                  //构建配置目录
+    |-- node_modules            //依赖的工具包
+    |-- src                     //源码目录
+    |   |-- App.vue             //页面级Vue组件
+    |   |-- main.js             //页面入口JS文件
+    |   |-- assets              //资源目录
+    |   |-- components          //组件目录
+    |   |-- router              //路由
+    |-- static                  //静态文件目录
+    |-- test                    //测试文件目录
+</code></pre><h1 id="二，基础配置"><a href="#二，基础配置" class="headerlink" title="二，基础配置"></a>二，基础配置</h1><h5 id="1-favicon设置"><a href="#1-favicon设置" class="headerlink" title="1. favicon设置"></a>1. favicon设置</h5><ul>
+<li><p>a，在<code>static</code>存放<code>favicon</code>图片</p>
+</li>
+<li><p>b，<code>index.html</code></p>
+<pre><code>&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;./static/favicon.ico&quot;/&gt;
+</code></pre></li>
+</ul>
+<h5 id="2-reset-css"><a href="#2-reset-css" class="headerlink" title="2.reset.css"></a>2.<a href="https://flyreve.github.io/HTML-CSS/css-reset/">reset.css</a></h5><h5 id="3-使用less"><a href="#3-使用less" class="headerlink" title="3.使用less"></a>3.使用less</h5><pre><code>npm install less less-loader --save-dev
+</code></pre><h5 id="4-移动端配置"><a href="#4-移动端配置" class="headerlink" title="4.移动端配置"></a>4.移动端配置</h5><ul>
+<li>1像素边框、 <code>meta</code>标签配置、解决300ms点击延迟问题（安装<code>fastclick</code>模块）</li>
+</ul>
+<h5 id="6-使用iconfont-使用styl-配置别名"><a href="#6-使用iconfont-使用styl-配置别名" class="headerlink" title="6.使用iconfont,使用styl,配置别名"></a>6.使用iconfont,使用styl,配置别名</h5>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-24T09:14:22.536Z" itemprop="dateUpdated">2020-04-24 17:14:22</time>
+</span><br>
+
+
+        
+        <a href="/2019-05-09/ckalxor6g001fz0tpyhkkbbml/" target="_blank" rel="external">https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://flyreve.github.io">
+            <img src="/img/avatar.jpg" alt="flyreve">
+            flyreve
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/&title=《Vue项目开发01-项目初始化》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/&title=《Vue项目开发01-项目初始化》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue项目开发01-项目初始化》 — Flyreve's Blog&url=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019-05-09/ckalxor69000wz0tp8urmyc56/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">样式重置</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>flyreve &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/&title=《Vue项目开发01-项目初始化》 — Flyreve's Blog&pic=https://flyreve.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/&title=《Vue项目开发01-项目初始化》 — Flyreve's Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue项目开发01-项目初始化》 — Flyreve's Blog&url=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/&via=https://flyreve.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://flyreve.github.io/2019-05-09/ckalxor6g001fz0tpyhkkbbml/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3a0W7bQAwEwPz/T7dAnlo0tnfJOxsFRk+Cokg3CnBkSH59xcev7+Pf8z+vPLrn+f2PfprceezAw8PDGy390ZGTZpjZGpL78fDw8G7z8mDwHDYLA/tg8/A6Hh4e3kd5+Wa9SdmTK3h4eHj/C2+fBM+ekKT4eHh4eO/n5a95/oL29W254WKtBQ8PDy/mbRpgnzp/U38PDw8Pr2w75dtu3v5vSxh5MPhhnXh4eHgXeKfKr2eT7+T+ImDg4eHhHeVtCgFJ0aENLckgV/LH+Cvu4eHh4V3gtSEhCQPtANZsdODFb+Hh4eFd4LX/9udFgdm4QL7pD0u6eHh4eGvePl3Ok+n2vW3wiAq4eHh4eGteOybVtsHa8mv+hHx4Cw8PD+8sL39BXgjIn7ApNESfGA8PD+8Cr31xskG3S9x8uOhOPDw8vAu8TblhHzbyAYUhBg8PD+8oL9/ik+tJOXhW2pg12PDw8PDu8doYcmqUalPGjZpteHh4eG/knUpz2yMfQUjCBh4eHt4N3u1BqLwNNku7o/CAh4eHd4HXtrhmRYQ8QW/BLz4xHh4e3lHe8+3+Roft1NhB9Cnx8PDwrvHyR7Qp+Cac7D8fHh4e3m1e3vrKS7HtR5kFhocrwcPDw7vAmyXWecFitrjZB8LDw8N7Jy9Pedt2VN4Y2wSk+hF4eHh4a17b7E/S4mTLTpLptngR9ffw8PDwjvLy9DovTyTP3LTWijYYHh4e3po3W9apgmyOb8MSHh4e3j1eWw7IzzcpeDuaMKy+4OHh4S14+Tbdbr6zMkdezMXDw8P7LG9VKg0263zUoI1g0WQEHh4e3kd5+ZBBy24HEaIxBTw8PLyP8jatrE1i3YaWYUqNh4eHV/LadlSS4CYp+L4U8mJVeHh4eBd4swZY29ZqQ8ussHusv4eHh4f38/2/AYvgAyeiJ8ONAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
